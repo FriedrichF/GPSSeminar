@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  Latex Vorlage f\"{u}r Abschlu{\ss}arbeiten                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,dvips,DIV13,BCOR10mm,fleqn,liststotoc,bibtotoc,cleardoubleempty]{scrbook}
+%,footexclude,headexclude standard,chapterprefix,
+\usepackage{times}            %Font
+\usepackage[latin1]{inputenc} %erkennt \"{a},\"{o},\"{u}
+\usepackage{german,amsfonts}  %erkennt \3 als {\ss}
+\usepackage[T1]{fontenc}      %z.B. f\"{u}r (besseres) automatisches Trennen nach Umlauten
+\usepackage{latexsym}         %sonstige Symbole (\partial)
+\usepackage{graphicx}         %[draft]
+%\usepackage[a4,center]{crop}  % cam,frame, habe D:\texmf\dvips\config\config.ps angepa{\ss}t!!!
+\usepackage{pstricks,pst-node,pst-tree,pst-plot}  %um B\"{a}ume zu zeichnen
+\usepackage{booktabs}         %f\"{u}r sch\"{o}nere Tabellen
+\usepackage{listings}         %fuer C-Programme
+\usepackage{textcomp}         %f\"{u}r \textperthousand = promille
+\usepackage{placeins}         %verhindert Gleiten von Abbildungen (bis \FloatBarrier)
+\usepackage{scrpage2}%[automark] f\"{u}r Kopfzeilen
+\setheadsepline{0.4pt} %
+\pagestyle{scrheadings} %Linie in Kopfzeilen
+\addtolength{\topmargin}{5mm} %gesamten Text auf der Seite nach unten schieben
+%\usepackage{setspace} Zeilenabstand \"{a}ndern. H\"{a}nde weg! Vergr\"{o}{\ss}ert auch den Abstand von Bildunterschriften...
+%\onehalfspacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+%von http://studiy.tu-cottbus.de/projektwiki/wissen:latex:diplomarbeit
+\titlehead{%  {\centering Seitenkopf}
+  {Hochschule f\"{u}r angewandte Wissenschaften\\
+   Fachhochschule W\"{u}rzburg-Schweinfurt\\
+   Fakult\"{a}t Informatik und Wirtschaftsinformatik}}
+\subject{Bachelorseminar}
+\title{GPS - Energieverbrauch in Smartphones}
+\subtitle{\normalsize{vorgelegt an der Hochschule f\"{u}r angewandte
+Wissenschaften Fachhochschule W\"{u}rzburg-Schweinfurt in der Fakult\"{a}t
+Informatik und Wirtschaftsinformatik für das Schwerpunktseminar im Bereich der
+Technischen Informatik}}
+\author{Sascha Greiner-Adam und Friedrich Fell}
+\date{\normalsize{\today}}
+\publishers{
+  \normalsize{Erstpr\"{u}fer: Prof. Dr. Balzer} \\
+  \normalsize{Zweitpr\"{u}fer: Prof. Dr. Braun}\\
+}
+
+%\uppertitleback{ }
+%\lowertitleback{ }
+
+\maketitle
+
+\thispagestyle{empty}
+\section*{Selbstst\"{a}ndigkeitserkl\"{a}rung}
+Hiermit versichere ich, dass ich die vorgelegte Arbeit selbstst\"{a}ndig
+verfasst und noch nicht anderweitig zu Pr\"{u}fungszwecken vorgelegt habe. Alle
+benutzten Quellen und Hilfsmittel sind angegeben, w\"{o}rtliche und
+sinngem\"{a}{\ss}e Zitate wurden als solche gekennzeichnet.\\[15mm]
+%% Abstand und Linie
+\vspace{20mm}
+\hrule
+\vspace{5mm}
+Würzburg, den \date{\today}
+
+\vspace{5cm}
+
+\thispagestyle{empty}
+\section*{Kurzfassung}
+In dieser Arbeit geht es darum den Energieverbrauch von Smartphones bei GPS
+benutzung zu analysieren und Energiesparendere alternativen zu finden.
+
+\vspace{5cm}
+
+\nonfrenchspacing
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+
+%\setcounter{page}{7}%  {tocdepth}{1} =section
+%\lstset{language=C, basicstyle=\ttfamily\small, commentstyle=\itshape}
+%\automark[chapter]{chapter} ???
+
+\tableofcontents %
+\listoffigures %
+\listoftables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\include{Einleitung}
+
+\include{theorie}
+
+\include{praxis}
+
+Hier wird eine Buch zitiert \cite{book-minimal} und hier ein anderes \cite{article-full}.
+
+%In der Realit\"{a}t sollten die Kapitel in einzelnen Dateien gespeichert werden
+% und diese mit \include eingebunden werden.
+%\include{einleitung}
+%
+%\include{zusammenfassung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+%\addpart{Anhang}
+%\appendix
+%\include{anhang_hard}
+%\addcontentsline{toc}{\bibliography}
+
+\bibliographystyle{galpha2a} %geralpha, dinat, dalpha, ...
+\bibliography{gerxampl}
+
+\end{document}
+
